@@ -210,7 +210,8 @@ void PairLJLambda::settings(int narg, char **arg)
   
   kappa = utils::numeric(FLERR,arg[0],false,lmp);
   cut_lj_global = utils::numeric(FLERR,arg[1],false,lmp);
-  if (narg == 1) cut_coul_global = cut_lj_global;
+  //if (narg == 1) cut_coul_global = cut_lj_global;
+  if (narg == 2) cut_coul_global = cut_lj_global;//I placed 2 in place of 1 for this if condition on narg
   else cut_coul_global = utils::numeric(FLERR,arg[2],false,lmp);
 
   // reset cutoffs that have been explicitly set
